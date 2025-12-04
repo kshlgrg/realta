@@ -39,7 +39,12 @@ body {
     padding: 0 40px;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-weight: 300;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -563,14 +568,21 @@ section {
         width: 100%;
         background: var(--bg-white);
         padding: 20px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         animation: slideDown 0.3s ease forwards;
     }
 }
 
 @keyframes slideDown {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Scroll Reveal Animation */
@@ -607,3 +619,121 @@ section {
 }
 
 
+
+/* Responsive Styles */
+
+/* Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    .container {
+        padding: 0 30px;
+    }
+
+    .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    section {
+        padding: 60px 0;
+    }
+
+    .container {
+        padding: 0 20px;
+    }
+
+    .grid-2,
+    .grid-3,
+    .grid-4,
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+
+    .btn {
+        padding: 15px 30px;
+        font-size: 0.8rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    .section-title h2::after {
+        width: 60px;
+    }
+
+    /* Adjust header for mobile */
+    .logo {
+        font-size: 1.8rem;
+    }
+
+    /* Ensure menu toggle is visible (if you had one in HTML/CSS earlier, 
+       but based on previous steps, we rely on the JS toggle logic) */
+    .menu-toggle {
+        display: block;
+        /* Ensure this is defined if not already */
+        font-size: 1.5rem;
+        background: none;
+        border: none;
+        color: var(--text-primary);
+        cursor: pointer;
+    }
+
+    /* Hide nav by default on mobile, shown via JS .active class */
+    nav ul {
+        display: none;
+    }
+
+    /* When active, it's already handled by the JS interaction styles above */
+}
+
+/* Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .property-features {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .footer-content {
+        text-align: center;
+    }
+}

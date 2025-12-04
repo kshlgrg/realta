@@ -547,6 +547,63 @@ section {
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px
+    gap: 20px;
+}
+
+/* JS Interaction Styles */
+
+/* Mobile Menu Active State */
+@media (max-width: 768px) {
+    nav.active ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: var(--bg-white);
+        padding: 20px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        animation: slideDown 0.3s ease forwards;
+    }
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Scroll Reveal Animation */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Building Reveal Animation */
+.building-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.building-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered delays for building cards */
+.building-reveal[data-delay="200"] {
+    transition-delay: 0.2s;
+}
+
+.building-reveal[data-delay="400"] {
+    transition-delay: 0.4s;
+}
 
 
